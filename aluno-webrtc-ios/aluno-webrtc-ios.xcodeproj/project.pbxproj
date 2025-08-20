@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D11FDD12E55E82200B2040B /* WebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 3D11FDD02E55E82200B2040B /* WebRTC */; };
+		3D11FDD42E55E85900B2040B /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 3D11FDD32E55E85900B2040B /* SocketIO */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D11FDA52E55E5E600B2040B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D11FD8F2E55E5E500B2040B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D11FD962E55E5E500B2040B;
+			remoteInfo = "aluno-webrtc-ios";
+		};
+		3D11FDAF2E55E5E600B2040B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D11FD8F2E55E5E500B2040B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D11FD962E55E5E500B2040B;
+			remoteInfo = "aluno-webrtc-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D11FD972E55E5E500B2040B /* aluno-webrtc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aluno-webrtc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D11FDA42E55E5E600B2040B /* aluno-webrtc-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aluno-webrtc-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D11FDAE2E55E5E600B2040B /* aluno-webrtc-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aluno-webrtc-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3D11FD992E55E5E500B2040B /* aluno-webrtc-ios */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "aluno-webrtc-ios";
+			sourceTree = "<group>";
+		};
+		3D11FDA72E55E5E600B2040B /* aluno-webrtc-iosTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "aluno-webrtc-iosTests";
+			sourceTree = "<group>";
+		};
+		3D11FDB12E55E5E600B2040B /* aluno-webrtc-iosUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "aluno-webrtc-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D11FD942E55E5E500B2040B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D11FDD12E55E82200B2040B /* WebRTC in Frameworks */,
+				3D11FDD42E55E85900B2040B /* SocketIO in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDA12E55E5E600B2040B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDAB2E55E5E600B2040B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D11FD8E2E55E5E500B2040B = {
+			isa = PBXGroup;
+			children = (
+				3D11FD992E55E5E500B2040B /* aluno-webrtc-ios */,
+				3D11FDA72E55E5E600B2040B /* aluno-webrtc-iosTests */,
+				3D11FDB12E55E5E600B2040B /* aluno-webrtc-iosUITests */,
+				3D11FD982E55E5E500B2040B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D11FD982E55E5E500B2040B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D11FD972E55E5E500B2040B /* aluno-webrtc-ios.app */,
+				3D11FDA42E55E5E600B2040B /* aluno-webrtc-iosTests.xctest */,
+				3D11FDAE2E55E5E600B2040B /* aluno-webrtc-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D11FD962E55E5E500B2040B /* aluno-webrtc-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D11FDB82E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-ios" */;
+			buildPhases = (
+				3D11FD932E55E5E500B2040B /* Sources */,
+				3D11FD942E55E5E500B2040B /* Frameworks */,
+				3D11FD952E55E5E500B2040B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3D11FD992E55E5E500B2040B /* aluno-webrtc-ios */,
+			);
+			name = "aluno-webrtc-ios";
+			packageProductDependencies = (
+				3D11FDD02E55E82200B2040B /* WebRTC */,
+				3D11FDD32E55E85900B2040B /* SocketIO */,
+			);
+			productName = "aluno-webrtc-ios";
+			productReference = 3D11FD972E55E5E500B2040B /* aluno-webrtc-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D11FDA32E55E5E600B2040B /* aluno-webrtc-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D11FDBB2E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-iosTests" */;
+			buildPhases = (
+				3D11FDA02E55E5E600B2040B /* Sources */,
+				3D11FDA12E55E5E600B2040B /* Frameworks */,
+				3D11FDA22E55E5E600B2040B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D11FDA62E55E5E600B2040B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3D11FDA72E55E5E600B2040B /* aluno-webrtc-iosTests */,
+			);
+			name = "aluno-webrtc-iosTests";
+			packageProductDependencies = (
+			);
+			productName = "aluno-webrtc-iosTests";
+			productReference = 3D11FDA42E55E5E600B2040B /* aluno-webrtc-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D11FDAD2E55E5E600B2040B /* aluno-webrtc-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D11FDBE2E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-iosUITests" */;
+			buildPhases = (
+				3D11FDAA2E55E5E600B2040B /* Sources */,
+				3D11FDAB2E55E5E600B2040B /* Frameworks */,
+				3D11FDAC2E55E5E600B2040B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D11FDB02E55E5E600B2040B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3D11FDB12E55E5E600B2040B /* aluno-webrtc-iosUITests */,
+			);
+			name = "aluno-webrtc-iosUITests";
+			packageProductDependencies = (
+			);
+			productName = "aluno-webrtc-iosUITests";
+			productReference = 3D11FDAE2E55E5E600B2040B /* aluno-webrtc-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D11FD8F2E55E5E500B2040B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					3D11FD962E55E5E500B2040B = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					3D11FDA32E55E5E600B2040B = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3D11FD962E55E5E500B2040B;
+					};
+					3D11FDAD2E55E5E600B2040B = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3D11FD962E55E5E500B2040B;
+					};
+				};
+			};
+			buildConfigurationList = 3D11FD922E55E5E500B2040B /* Build configuration list for PBXProject "aluno-webrtc-ios" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D11FD8E2E55E5E500B2040B;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3D11FDCF2E55E82200B2040B /* XCRemoteSwiftPackageReference "WebRTC" */,
+				3D11FDD22E55E85900B2040B /* XCRemoteSwiftPackageReference "socket" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3D11FD982E55E5E500B2040B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D11FD962E55E5E500B2040B /* aluno-webrtc-ios */,
+				3D11FDA32E55E5E600B2040B /* aluno-webrtc-iosTests */,
+				3D11FDAD2E55E5E600B2040B /* aluno-webrtc-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D11FD952E55E5E500B2040B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDA22E55E5E600B2040B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDAC2E55E5E600B2040B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D11FD932E55E5E500B2040B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDA02E55E5E600B2040B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D11FDAA2E55E5E600B2040B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D11FDA62E55E5E600B2040B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D11FD962E55E5E500B2040B /* aluno-webrtc-ios */;
+			targetProxy = 3D11FDA52E55E5E600B2040B /* PBXContainerItemProxy */;
+		};
+		3D11FDB02E55E5E600B2040B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D11FD962E55E5E500B2040B /* aluno-webrtc-ios */;
+			targetProxy = 3D11FDAF2E55E5E600B2040B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D11FDB62E55E5E600B2040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D11FDB72E55E5E600B2040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D11FDB92E55E5E600B2040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D11FDBA2E55E5E600B2040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D11FDBC2E55E5E600B2040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aluno-webrtc-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/aluno-webrtc-ios";
+			};
+			name = Debug;
+		};
+		3D11FDBD2E55E5E600B2040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aluno-webrtc-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/aluno-webrtc-ios";
+			};
+			name = Release;
+		};
+		3D11FDBF2E55E5E600B2040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "aluno-webrtc-ios";
+			};
+			name = Debug;
+		};
+		3D11FDC02E55E5E600B2040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SG9ZK6A838;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "isequiel.aluno-webrtc-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "aluno-webrtc-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D11FD922E55E5E500B2040B /* Build configuration list for PBXProject "aluno-webrtc-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D11FDB62E55E5E600B2040B /* Debug */,
+				3D11FDB72E55E5E600B2040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D11FDB82E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D11FDB92E55E5E600B2040B /* Debug */,
+				3D11FDBA2E55E5E600B2040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D11FDBB2E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D11FDBC2E55E5E600B2040B /* Debug */,
+				3D11FDBD2E55E5E600B2040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D11FDBE2E55E5E600B2040B /* Build configuration list for PBXNativeTarget "aluno-webrtc-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D11FDBF2E55E5E600B2040B /* Debug */,
+				3D11FDC02E55E5E600B2040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D11FDCF2E55E82200B2040B /* XCRemoteSwiftPackageReference "WebRTC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stasel/WebRTC";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 139.0.0;
+			};
+		};
+		3D11FDD22E55E85900B2040B /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D11FDD02E55E82200B2040B /* WebRTC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D11FDCF2E55E82200B2040B /* XCRemoteSwiftPackageReference "WebRTC" */;
+			productName = WebRTC;
+		};
+		3D11FDD32E55E85900B2040B /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D11FDD22E55E85900B2040B /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3D11FD8F2E55E5E500B2040B /* Project object */;
+}
