@@ -8,12 +8,14 @@
 import SwiftUI
 import WebRTC
 
+
 struct LiveStreamScreen: View {
     let roomCode: String
     let serverUrl: String
 
+    // Mensagens de status
     @StateObject private var webRTCService = WebRTCService()
-    @State private var connectionStatus: String = "Conectando..."
+    @State private var connectionStatus: String = ""
     @State private var isConnected = false
     @State private var isStreamActive = false
     @State private var errorMessage: String = ""
@@ -24,6 +26,7 @@ struct LiveStreamScreen: View {
             if let videoTrack = webRTCService.remoteVideoTrack {
                 // Passando o RTCVideoTrack para a VideoView
                 VideoView(videoTrack: videoTrack)
+                
                     .ignoresSafeArea()
             } else if !errorMessage.isEmpty {
                 Text("Erro: \(errorMessage)")
@@ -35,21 +38,24 @@ struct LiveStreamScreen: View {
                         .foregroundColor(.white)
                 }
             }
-
+            
+            
             HStack {
                 Circle()
-                    .fill(isConnected ? Color.green : Color.red)
+                    .fill(webRTCService.isConnected ? Color.green : Color.red)
                     .frame(width: 12, height: 12)
-                Text(connectionStatus)
+
+                Text(webRTCService.isConnected ? "Conectado" : "Conectando...")
                     .foregroundColor(.white)
-                Spacer()
-                if isStreamActive {
-                    Text("AO VIVO") //Pendente: não está ocorrendo atualização visual do status "conectando" para "ao vivo"
+
+                if webRTCService.isStreamActive {
+                    Text("AO VIVO")
                         .padding(6)
                         .background(Color.red)
                         .cornerRadius(4)
                         .foregroundColor(.white)
                 }
+
             }
             .padding()
             .background(Color.black)
@@ -67,7 +73,7 @@ struct VideoView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> RTCMTLVideoView {
         let renderer = RTCMTLVideoView() // Cria o renderer
-        renderer.videoContentMode = .scaleAspectFill
+        renderer.videoContentMode = .scaleAspectFit
         renderer.clipsToBounds = true
         videoTrack.add(renderer) // Adiciona o track ao renderer
         return renderer
