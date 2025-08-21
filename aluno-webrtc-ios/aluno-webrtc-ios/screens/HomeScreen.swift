@@ -26,6 +26,7 @@ struct HomeScreen: View {
     @State private var alertMessage: String = ""
 
     var body: some View {
+        //Background
         ZStack {
             LinearGradient(
                 gradient: Gradient(colors: [Color(hex: 0x667EEA), Color(hex: 0x764BA2)]),
@@ -33,7 +34,7 @@ struct HomeScreen: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-
+            
             VStack {
                 Spacer()
 
@@ -110,6 +111,7 @@ struct HomeScreen: View {
         }
     }
 
+    // Limitar a
     private func joinClass() {
         guard roomCode.count == 6 else {
             alertMessage = "O código deve ter 6 dígitos"
@@ -119,6 +121,7 @@ struct HomeScreen: View {
 
         isLoading = true
 
+        //Conexão com o webRTC
         Task {
             let service = WebRTCService()
             do {
