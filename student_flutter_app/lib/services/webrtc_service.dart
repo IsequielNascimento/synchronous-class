@@ -15,12 +15,17 @@ class WebRTCService {
   Function(String)? onError;
 
   // Configuração ICE servers
-  final Map<String, dynamic> _iceServers = {
-    'iceServers': [
-      {'urls': 'stun:stun.l.google.com:19302'},
-      {'urls': 'stun:stun1.l.google.com:19302'},
-    ]
-  };
+final Map<String, dynamic> _iceServers = {
+  'iceServers': [
+    {'urls': 'stun:stun.l.google.com:19302'},
+    {
+      'urls': 'turn:meu-turn-server.com:3478',
+      'username': 'usuario',
+      'credential': 'senha'
+    }
+  ]
+};
+
 
   Future<bool> checkRoomExists(String serverUrl, String roomCode) async {
     try {
