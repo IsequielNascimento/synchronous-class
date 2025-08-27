@@ -6,17 +6,21 @@ struct LiveStreamView: View {
     
     var body: some View {
         VStack {
+            //Se tiver vídeo, renderiza
             if let videoTrack = viewModel.webRTCService.remoteVideoTrack {
                 VideoView(videoTrack: videoTrack).ignoresSafeArea()
+                // Se não, mostrar mensagem de erro
             } else if !viewModel.errorMessage.isEmpty {
                 Text("Erro: \(viewModel.errorMessage)").foregroundColor(.red)
             } else {
                 VStack {
+                    //Loading
                     ProgressView()
                     Text("Aguardando transmissão...").foregroundColor(.white)
                 }
             }
             
+            //Barra de status da transmissão
             HStack {
                 Circle()
                     .fill(viewModel.webRTCService.isConnected ? Color.green : Color.red)
@@ -38,6 +42,7 @@ struct LiveStreamView: View {
         }
         .background(Color.black)
         .task {
+            //Conecta na sala apenas quando carregar a tela
             await viewModel.connect()
         }
     }

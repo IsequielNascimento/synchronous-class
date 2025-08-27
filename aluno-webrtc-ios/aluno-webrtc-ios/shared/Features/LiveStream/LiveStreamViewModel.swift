@@ -13,6 +13,7 @@ class LiveStreamViewModel: ObservableObject {
         self.serverUrl = serverUrl
     }
     
+    //Conecta a sala chamando o WebRTC
     func connect() async {
         await webRTCService.joinRoom(serverUrl: serverUrl, roomCode: roomCode)
     }

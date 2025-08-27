@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct aluno_webrtc_iosApp: App {
-    @StateObject private var coordinator = AppCoordinator()
+    @StateObject private var coordinator = AppCoordinator() //Coordinator para geernciar a navegação
     
     var body: some Scene {
         WindowGroup {

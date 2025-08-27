@@ -13,6 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            //Background gradiente
             LinearGradient(
                 gradient: Gradient(colors: [Color(hex: 0x667EEA), Color(hex: 0x764BA2)]),
                 startPoint: .topLeading,
@@ -40,7 +41,7 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                // Form
+                // Forms
                 VStack(spacing: 16) {
                     Text("Entrar na Aula")
                         .font(.title2).bold().foregroundColor(Color.black)
@@ -79,11 +80,13 @@ struct HomeView: View {
             }
             .padding()
             
+
+            //Alerta
             if let alertMessage = viewModel.alertMessage {
                 Text(alertMessage)
                     .foregroundColor(.red)
             }
-            
+            //Próxima página
             if let destination = navigateTo {
                 destination
             }
