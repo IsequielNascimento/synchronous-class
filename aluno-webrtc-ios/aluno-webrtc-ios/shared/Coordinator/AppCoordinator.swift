@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-
+@MainActor
 class AppCoordinator: ObservableObject {
     @Published var currentView: AnyView?
     
     init() {
         start()
     }
-    //primeira tela a ser exibida pelo APP
+    
     func start() -> some View {
         let homeCoordinator = HomeCoordinator(parent: self)
         return homeCoordinator.start()

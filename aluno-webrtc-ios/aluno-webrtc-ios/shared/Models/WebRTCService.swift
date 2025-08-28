@@ -160,34 +160,28 @@ class WebRTCService: NSObject, ObservableObject {
     }
 }
 
-extension WebRTCService: RTCPeerConnectionDelegate {
 
-    // cahamada quando um candidato ICE local é gerado.
-    func peerConnection(_ peerConnection: RTCPeerConnection, didGenerate candidate: RTCIceCandidate) {
-        guard let teacherId = self.teacherSocketId else {
-    //        print(" Candidato ICE gerado, mas o ID do professor não está disponível.")
-            return
+extension WebRTCService: RTCPeerConnectionDelegate {
+    nonisolated func peerConnection(_ peerConnection: RTCPeerConnection, didGenerate candidate: RTCIceCandidate) {
+        Task { @MainActor in
+            guard let teacherId = self.teacherSocketId else { return }
+            let candidateData: [String: Any] = [
+                "candidate": candidate.sdp,
+                "sdpMid": candidate.sdpMid ?? "",
+                "sdpMLineIndex": candidate.sdpMLineIndex
+            ]
+            self.socket?.emit("ice-candidate", [
+                "candidate": candidateData,
+                "targetId": teacherId
+            ])
         }
-        
-        let candidateData: [String: Any] = [
-            "candidate": candidate.sdp,
-            "sdpMid": candidate.sdpMid ?? "",
-            "sdpMLineIndex": candidate.sdpMLineIndex
-        ]
-        
-        // Envia o candidato local para o servidor, direcionado ao professor
-        socket?.emit("ice-candidate", [
-            "candidate": candidateData,
-            "targetId": teacherId
-        ])
-    
     }
 
-    func peerConnection(_ peerConnection: RTCPeerConnection, didAdd stream: RTCMediaStream) {
+    nonisolated func peerConnection(_ peerConnection: RTCPeerConnection, didAdd stream: RTCMediaStream) {
         if let track = stream.videoTracks.first {
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 self.remoteVideoTrack = track
-                self.isStreamActive = true  //  sinaliza que tem vídeo ativo
+                self.isStreamActive = true
             }
         }
     }
