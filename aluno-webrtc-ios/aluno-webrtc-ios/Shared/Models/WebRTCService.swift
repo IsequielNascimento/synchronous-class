@@ -11,23 +11,28 @@ import WebRTC
 import SocketIO
 
 @MainActor
+// Inicializacao dos sockects e constructor RTCPeerConnection
 class WebRTCService: NSObject, ObservableObject {
     
     private var socket: SocketIOClient?
     private var manager: SocketManager?
     private var peerConnection: RTCPeerConnection?
     private var teacherSocketId: String?
+    @Published var isConnected: Bool = false
+    @Published var isStreamActive: Bool = false
+    @Published var errorMessage: String = ""
+
     
-    // Mude de RTCMTLVideoView? para RTCVideoTrack?
     @Published var remoteVideoTrack: RTCVideoTrack?
 
+    // Retorna o ObjectiveC.NSObject para WebRTCService com os encoders disponíveis
     private let factory: RTCPeerConnectionFactory = {
         RTCInitializeSSL()
         let videoEncoderFactory = RTCDefaultVideoEncoderFactory()
         let videoDecoderFactory = RTCDefaultVideoDecoderFactory()
         return RTCPeerConnectionFactory(encoderFactory: videoEncoderFactory, decoderFactory: videoDecoderFactory)
     }()
-
+    
 
     static func checkRoomExists(serverUrl: String, roomCode: String) async throws -> Bool {
          guard let url = URL(string: "\(serverUrl)/room/\(roomCode)") else {
@@ -99,7 +104,7 @@ class WebRTCService: NSObject, ObservableObject {
                 do {
                     try await self.peerConnection?.add(iceCandidate)
                 } catch {
-                    print("❌ Erro ao adicionar candidato ICE recebido: \(error)")
+                   // print("❌ Erro ao adicionar candidato ICE recebido: \(error)")
                 }
             }
         }
@@ -155,41 +160,48 @@ class WebRTCService: NSObject, ObservableObject {
     }
 }
 
-extension WebRTCService: RTCPeerConnectionDelegate {
 
-    // cahamada quando um candidato ICE local é gerado.
-    func peerConnection(_ peerConnection: RTCPeerConnection, didGenerate candidate: RTCIceCandidate) {
-        guard let teacherId = self.teacherSocketId else {
-    //        print(" Candidato ICE gerado, mas o ID do professor não está disponível.")
-            return
+extension WebRTCService: RTCPeerConnectionDelegate {
+    nonisolated func peerConnection(_ peerConnection: RTCPeerConnection, didGenerate candidate: RTCIceCandidate) {
+        Task { @MainActor in
+            guard let teacherId = self.teacherSocketId else { return }
+            let candidateData: [String: Any] = [
+                "candidate": candidate.sdp,
+                "sdpMid": candidate.sdpMid ?? "",
+                "sdpMLineIndex": candidate.sdpMLineIndex
+            ]
+            self.socket?.emit("ice-candidate", [
+                "candidate": candidateData,
+                "targetId": teacherId
+            ])
         }
-        
-        let candidateData: [String: Any] = [
-            "candidate": candidate.sdp,
-            "sdpMid": candidate.sdpMid ?? "",
-            "sdpMLineIndex": candidate.sdpMLineIndex
-        ]
-        
-        // Envia o candidato local para o servidor, direcionado ao professor
-        socket?.emit("ice-candidate", [
-            "candidate": candidateData,
-            "targetId": teacherId
-        ])
-    
     }
 
-    func peerConnection(_ peerConnection: RTCPeerConnection, didAdd stream: RTCMediaStream) {
-        print("📺 Stream remoto recebido com \(stream.videoTracks.count) vídeos e \(stream.audioTracks.count) áudios")
+    nonisolated func peerConnection(_ peerConnection: RTCPeerConnection, didAdd stream: RTCMediaStream) {
         if let track = stream.videoTracks.first {
-            // Publica o RTCVideoTrack para a View
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 self.remoteVideoTrack = track
+                self.isStreamActive = true
             }
         }
     }
+
     
+    //Sinalizacao da atualizacao de status da conexao professor aluno
     func peerConnection(_ peerConnection: RTCPeerConnection, didChange newState: RTCIceConnectionState) {
+        DispatchQueue.main.async {
+            switch newState {
+            case .connected, .completed:
+                self.isConnected = true
+            case .disconnected, .failed, .closed:
+                self.isConnected = false
+                self.isStreamActive = false
+            default:
+                break
+            }
+        }
     }
+
 
     // Funções de delegate
     func peerConnection(_ peerConnection: RTCPeerConnection, didRemove stream: RTCMediaStream) {}

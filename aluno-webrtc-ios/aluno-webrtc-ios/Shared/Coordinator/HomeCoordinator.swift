@@ -1,8 +1,27 @@
 //
-//  HomeCoordinator.swift
+//  aluno_webrtc_iosApp.swift
 //  aluno-webrtc-ios
 //
-//  Created by Isequiel Henrique do Nascimento on 28/08/25.
+//  Created by Isequiel Henrique do Nascimento on 23/08/25.
 //
 
-import Foundation
+
+import SwiftUI
+@MainActor
+class HomeCoordinator {
+    private let parent: AppCoordinator
+    
+    init(parent: AppCoordinator) {
+        self.parent = parent
+    }
+    
+    func start() -> some View {
+        let viewModel = HomeViewModel(coordinator: self)
+        return HomeView(viewModel: viewModel)
+    }
+    
+    func showLiveStream(roomCode: String, serverUrl: String) -> some View {
+        let viewModel = LiveStreamViewModel(roomCode: roomCode, serverUrl: serverUrl)
+        return LiveStreamView(viewModel: viewModel)
+    }
+}
